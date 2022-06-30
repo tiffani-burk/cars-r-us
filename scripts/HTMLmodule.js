@@ -24,4 +24,6 @@ export const mainHMTL = () => {
     </section>`
 }
 
+//create a click event to add the order to the screen
+
 

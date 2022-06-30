@@ -3,21 +3,17 @@ import { getPaints } from "./database.js";
 const paintChoices = getPaints
 
 export const paints = () => {
-    let html = "<ul>"
+    let html = "<h2>Paints</h2>"
+
+    html += ` <select id="paint-dropdown">`
+    html += ` <option value= "0">Silver</option>`
     
     let listItemArray = paintChoices.map(paintChoice => {
-        return `<h2>Paints</h2>
-        <select id="paint-dropdown">
-        <option value= "0">Silver</option>
-        <option value= "1">Midnight Blue</option>
-        <option value= "2">Firebrick Red</option>
-        <option value= "3">Spring Green</option>
-        </select> 
-        `
+        return `option value="${paintChoice.id}">${paintChoice.color}</option>`
     })
 
     html + listItemArray.join("")
-    html + "</ul>"
+    html + "</select>"
     return html
 }
 //create an event listener for the paint choices

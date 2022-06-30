@@ -2,22 +2,19 @@ import { getWheels } from "./database.js";
 
 const wheelChoices = getWheels
 
+//This is right, fix paint, interior, and tech
 export const wheels = () => {
-    let html = "<ul>"
+    let html = "<h2>Wheels</h2>"
+
+    html += '<select id="wheels-dropdown"'
+    html +=  '<option value= "0">17-inch Pair Radial</option>'
 
     let listItemArray = wheelChoices.map(wheelChoice => {
-        return `<h2>Wheels</h2>
-        <select id="wheels-dropdown">
-        <option value= "0">17-inch Pair Radial</option>
-        <option value= "1">17-inch Pair Radial Black</option>
-        <option value= "2">18-inch Pair Spoke Silver</option>
-        <option value= "3">18-inch Pair Spoke Black</option>
-        </select> 
-        `
+       return `<option value="${wheelChoice.id}">${wheelChoice.name}</option>`
     })
 
-    html + listItemArray.join("")
-    html + "</ul>"
+    html += listItemArray.join("")
+    html + "</select>"
     return html
 }
 

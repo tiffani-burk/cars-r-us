@@ -3,20 +3,17 @@ import { getTechs } from "./database";
 const techChoices = getTechs()
 
 export const technologies = () => {
-    let html = "<ul>"
+    let html = "<h2>Technologies</h2>"
 
+    html += '<select id="tech-dropdown"'
+    html += `<option value= "0">Basic Package (basic sound system)</option>
+    `
     let listItemArray = techChoices.map(techChoice => {
-        return `<h2>Technologies</h2>
-        <select id="tech-dropdown">
-        <option value= "0">Basic Package (basic sound system)</option>
-        <option value= "1">Navigation Package (includes integrated navigation controls)</option>
-        <option value= "2">Visibility Package (includes side and reat cameras)"</option>
-        <option value= "3">Ultra Package (includes navigation and visibility packages)</option>
-        </select> `
+      return `<option value="${techChoice.id}">${techChoice.name}</option>`
     }) 
 
     html + listItemArray.join("")
-    html + "</ul>"
+    html + "</select>"
     return html
 }
 

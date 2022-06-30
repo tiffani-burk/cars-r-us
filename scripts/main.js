@@ -12,7 +12,7 @@ renderAllHTML()
 
 //listening for the event of state to be changed "stateChanged"
 document.addEventListener(
-    "stateChanged", stateEvent =>{
+    "stateChanged", event =>{
         console.log("event changed")
         renderAllHTML()
     }

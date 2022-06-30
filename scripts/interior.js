@@ -4,20 +4,17 @@ const interiorChoices = getInteriors()
 
 export const interiors = () => {
 
-    let html = "<ul>"
+    let html = "<h2>Interiors</h2>"
+
+    html += `<select id=id="interior-dropdown">`
+    html += `<option value= "0">Beige Fabric</option>`
 
     let listItemArray = interiorChoices.map(interiorChoice => {
-    return `<h2>Interiors</h2>
-    <select id="interior-dropdown">
-    <option value= "0">Beige Fabric</option>
-    <option value= "1">Charcoal Fabric</option>
-    <option value= "2">White Leather</option>
-    <option value= "3">Black Leather</option>
-    </select> `  
+    return `<option value= "${interiorChoice.id}" >${interiorChoice.name}</option> `  
     })
 
    html + listItemArray.join("")
-   html + "</ul>"
+   html + "</select>"
    return html
 }
 
