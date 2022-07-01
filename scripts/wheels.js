@@ -7,7 +7,7 @@ export const wheels = () => {
     let html = "<h2>Wheels</h2>"
 
     html += '<select id="wheels-dropdown"'
-    html +=  '<option value= "0">17-inch Pair Radial</option>'
+    html +=  '<option value= "0">Select Wheels</option>'
 
     let listItemArray = wheelChoices.map(wheelChoice => {
        return `<option value="${wheelChoice.id}">${wheelChoice.name}</option>`
@@ -19,3 +19,11 @@ export const wheels = () => {
 }
 
 //create an event listener for the wheels choices
+document.addEventListener(
+    "change",
+    (changeEvent) => {
+        if (changeEvent.target.id === "wheels-dropdown") {
+            window.alert (`wheels are selected`)
+        }
+    }
+)

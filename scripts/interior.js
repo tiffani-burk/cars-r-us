@@ -20,11 +20,11 @@ export const interiors = () => {
 
 //create an event listener for the interior choices;window alert
 document.addEventListener(
-    "change",
+    "change", //change event added because it is moving through options
     (changeEvent) => {
 
         if (changeEvent.target.id === "interior-dropdown") {
-            window.alert(`this is clicked`)
+            window.alert(`interior selected`)
         }
     }
 )

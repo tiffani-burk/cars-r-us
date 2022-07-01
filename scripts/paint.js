@@ -6,7 +6,7 @@ export const paints = () => {
     let html = "<h2>Paints</h2>"
 
     html += '<select id="paint-dropdown">'
-    html += '<option value= "0">Silver</option>'
+    html += '<option value= "0">Select</option>'
     
     let paintItemArray = paintChoices.map(paintChoice => {
         return `<option value="${paintChoice.id}">${paintChoice.color}</option>`
@@ -17,3 +17,11 @@ export const paints = () => {
     return html
 }
 //create an event listener for the paint choices
+document.addEventListener(
+    "change",
+    (changeEvent) => {
+        if (changeEvent.target.id === "paint-dropdown") {
+            window.alert(`paint is selected`)
+        }
+    }
+)
