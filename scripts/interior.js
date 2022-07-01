@@ -1,30 +1,30 @@
-import { getInteriors, setInterior } from "./database.js";
+import { getInteriors } from "./database.js";
 
 const interiorChoices = getInteriors()
 
+//createing html representaion of interior options and looping through the options and creating a dropdown menu
 export const interiors = () => {
-
     let html = "<h2>Interiors</h2>"
 
-    html += `<select id=id="interior-dropdown">`
-    html += `<option value= "0">Beige Fabric</option>`
+    html += '<select id="interior-dropdown">'
+    html += '<option value= "0">Select</option>'
 
-    let listItemArray = interiorChoices.map(interiorChoice => {
-    return `<option value= "${interiorChoice.id}" >${interiorChoice.name}</option> `  
+    let interiorItemArray = interiorChoices.map(interiorChoice => {
+        return `<option value= "${interiorChoice.id}" >${interiorChoice.name}</option>`
     })
 
-   html + listItemArray.join("")
-   html + "</select>"
-   return html
+    html += interiorItemArray.join("")
+    html += "</select>"
+    return html
 }
 
 //create an event listener for the interior choices;window alert
 document.addEventListener(
     "change",
     (changeEvent) => {
-        if(changeEvent.target.name === "interior"){
-            setInterior(parseInt(changeEvent.target.value))
+
+        if (changeEvent.target.id === "interior-dropdown") {
+            window.alert(`this is clicked`)
         }
     }
-
 )

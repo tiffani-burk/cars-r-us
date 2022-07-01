@@ -9,7 +9,6 @@ export const mainHMTL = () => {
     <h1>Cars-R-Us </h1>
     <section class="choices">
         <article class="paint-choices">
-        <h2>hello</h2>
         ${paints()}
         </article>
         <article class="interior-choices">

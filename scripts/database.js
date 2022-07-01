@@ -109,7 +109,7 @@ export const getPaints = () => {
     return database.paint
 }
 export const getOrders = () => {
-    return database.customOrder
+    return database.customOrders
 }
 
 //setter functions 

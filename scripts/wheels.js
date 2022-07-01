@@ -1,6 +1,6 @@
 import { getWheels } from "./database.js";
 
-const wheelChoices = getWheels
+const wheelChoices = getWheels()
 
 //This is right, fix paint, interior, and tech
 export const wheels = () => {
@@ -14,7 +14,7 @@ export const wheels = () => {
     })
 
     html += listItemArray.join("")
-    html + "</select>"
+    html += "</select>"
     return html
 }
 
