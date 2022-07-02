@@ -1,4 +1,4 @@
-import { getInteriors } from "./database.js";
+import { getInteriors, setInterior } from "./database.js";
 
 const interiorChoices = getInteriors()
 
@@ -24,7 +24,7 @@ document.addEventListener(
     (changeEvent) => {
 
         if (changeEvent.target.id === "interior-dropdown") {
-            window.alert(`interior selected`)
+           setInterior(parseInt(changeEvent.target.value))//store the user's choice in your database.
         }
     }
 )

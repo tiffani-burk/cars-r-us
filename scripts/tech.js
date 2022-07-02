@@ -1,4 +1,4 @@
-import { getTechs } from "./database.js";
+import { getTechs, setTechs } from "./database.js";
 
 const techChoices = getTechs()
 
@@ -24,7 +24,8 @@ document.addEventListener(
   (changeEvent) => {
 
     if(changeEvent.target.id === "tech-dropdown") {
-      window.alert(`tech is clicked`)
+      setTechs(parseInt(changeEvent.target.value)) //store the user's choice in your database.
     }
   }
 ) 
+//checked the change event was targeting properly by first putting window.alert(`this has been clicked`) on line 27 

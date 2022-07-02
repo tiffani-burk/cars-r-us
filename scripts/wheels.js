@@ -1,4 +1,4 @@
-import { getWheels } from "./database.js";
+import { getWheels, setWheels } from "./database.js";
 
 const wheelChoices = getWheels()
 
@@ -23,7 +23,7 @@ document.addEventListener(
     "change",
     (changeEvent) => {
         if (changeEvent.target.id === "wheels-dropdown") {
-            window.alert (`wheels are selected`)
+          setWheels(parseInt(changeEvent.target.value))//store the user's choice in your database.
         }
     }
 )

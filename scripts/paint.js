@@ -1,4 +1,4 @@
-import { getPaints } from "./database.js";
+import { getPaints, setPaint } from "./database.js";
 
 const paintChoices = getPaints()
 
@@ -21,7 +21,7 @@ document.addEventListener(
     "change",
     (changeEvent) => {
         if (changeEvent.target.id === "paint-dropdown") {
-            window.alert(`paint is selected`)
+          setPaint(parseInt(changeEvent.target.value))//store the user's choice in your database.
         }
     }
 )
