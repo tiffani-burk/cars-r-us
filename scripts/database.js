@@ -85,14 +85,14 @@ const database = {
         price: 800
     }
 ],
-customOrders: {
+customOrders: [{
     id: 1,
     techId: 3, 
     wheelId: 4, 
     interiorId: 2, 
     paintId: 4, 
     timestamp: 3427849283
-}
+}]
 }
 
 //export functions with access to data from database
@@ -132,7 +132,7 @@ export const addCustomOrder = () => {
 
     const lastIndex = database.customOrders.length - 1 //add new primary key to the object
 
-    newOrder.id = database.customOrders[lastIndex] + 1
+    newOrder.id = database.customOrders[lastIndex].id + 1
 
     newOrder.timestamp = Date.now() //add timestamp to order
 

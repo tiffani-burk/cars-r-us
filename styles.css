@@ -4,6 +4,17 @@ h1 {
     font-family: poppins;
 }
 
+h3 {
+    text-align: center;
+    font-family: Poppins light;
+    color: rgb(103, 105, 107);
+}
+.line {
+    height: 2px;
+    background-color: rgb(184, 187, 189);
+    box-shadow: 2px 2px 8px grey;
+}
+
 .options {
     width: 20%;
     background-color: rgb(237, 240, 243);

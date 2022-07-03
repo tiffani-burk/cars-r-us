@@ -20,7 +20,7 @@ export const paints = () => {
 document.addEventListener(
     "change",
     (changeEvent) => {
-        if (changeEvent.target.id === "paint-dropdown") {
+        if (changeEvent.target.name === "paintChoice") {
           setPaint(parseInt(changeEvent.target.value))//store the user's choice in your database.
         }
     }
