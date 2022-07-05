@@ -35,7 +35,7 @@ const buildOrderListItem = (order) => {
             }
         )
         
-        //PROBLEM WITH ABOVE FUNCTIONS. .PRICE COMING BACK UNDEFINED!!!
+    
         //store sum of values to a variable
         let totalCost = foundInterior.price + foundPaint.price + foundTech.price + foundWheels.price
         
