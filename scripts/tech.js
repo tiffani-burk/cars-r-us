@@ -5,7 +5,7 @@ const techChoices = getTechs()
 export const technologies = () => {
     let html = "<h2>Technologies</h2>"
 
-    html += '<select id="tech-dropdown"'
+    html += '<select id="tech-dropdown">'
     html += '<option value= "0">Select</option>'
     
     let listItemArray = techChoices.map(techChoice => {
