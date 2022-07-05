@@ -2,8 +2,8 @@ import { technologies } from "./tech.js"
 import { wheels } from "./wheels.js"
 import { interiors } from "./interior.js"
 import { paints } from "./paint.js"
-import { addCustomOrder } from "./database.js"
 import { Orders } from "./order.js"
+
 
 //creating main HTML representation for the document
 export const mainHMTL = () => {
@@ -36,17 +36,3 @@ export const mainHMTL = () => {
     </section>`
 }
 
-//create a click event to add the order to the screen
-//PROBLEM: addCustomOrder() not working 
-
-document.addEventListener(
-    "click",
-    (clickEvent) => {
-        const buttonClicked = clickEvent.target
-
-        if(buttonClicked.id === "button"){
-            addCustomOrder() //invoking the function responsible for taking temp state and making it permanant 
-    
-        }
-    }
-)

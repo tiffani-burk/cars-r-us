@@ -1,6 +1,6 @@
 const database = {
     orderBuilder:{}, //empty object to build custom orders into later
-    paint: [{
+    paints: [{
         id: 1,
         color: "Silver",
         price: 500
@@ -42,7 +42,7 @@ const database = {
         price: 800
     }
 ],
-    technology: [{
+    technologies: [{
         id: 1,
         name: "Basic Package (basic sound system)",
         price: 0
@@ -64,7 +64,7 @@ const database = {
     }
 
 ],
-    interior:[{
+    interiors:[{
         id: 1,
         name: "Beige Fabric ",
         price: 0
@@ -97,19 +97,19 @@ customOrders: [{
 
 //export functions with access to data from database
 export const getTechs = () => {
-    return database.technology
+    return database.technologies.map(tech => ({...tech}))
 }
 export const getWheels = () => {
-    return database.wheels
+    return database.wheels.map(wheel => ({...wheel}))
 }
 export const getInteriors = () => {
-    return database.interior
+    return database.interiors.map(interior => ({...interior}))
 }
 export const getPaints = () => {
-    return database.paint
+    return database.paints.map(paint => ({...paint}))
 }
 export const getOrders = () => {
-    return database.customOrders
+    return database.customOrders.map(order=> ({...order}))
 }
 
 //setter functions 

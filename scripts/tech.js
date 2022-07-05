@@ -23,7 +23,7 @@ document.addEventListener(
   "change",
   (changeEvent) => {
 
-    if(changeEvent.target.name === "techChoice") {
+    if(changeEvent.target.id === "tech-dropdown") {
       setTechs(parseInt(changeEvent.target.value)) //store the user's choice in your database.
     }
   }

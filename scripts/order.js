@@ -1,9 +1,10 @@
-import { getPaints, getTechs, getWheels, getInteriors, getOrders  } from "./database.js";
+import { getPaints, getTechs, getWheels, getInteriors, getOrders, addCustomOrder  } from "./database.js";
 
 const paints = getPaints()
 const techs = getTechs()
 const wheels = getWheels()
 const interiors = getInteriors()
+
 
 
 
@@ -36,7 +37,7 @@ const buildOrderListItem = (order) => {
         
         //PROBLEM WITH ABOVE FUNCTIONS. .PRICE COMING BACK UNDEFINED!!!
         //store sum of values to a variable
-        const totalCost = foundInterior.price + foundPaint.price + foundTech.price +foundWheels.price 
+        let totalCost = foundInterior.price + foundPaint.price + foundTech.price + foundWheels.price
         
         //convert the number to a string with currency $ sign
         const costString = totalCost.toLocaleString("en-US", {
@@ -56,7 +57,7 @@ const buildOrderListItem = (order) => {
 
         let html = "<ul>"
 
-        const listItems = orders.map(buildOrderListItem)
+        let listItems = orders.map(buildOrderListItem)
 
         html += listItems.join("")
 
@@ -64,3 +65,20 @@ const buildOrderListItem = (order) => {
 
         return html
     }
+
+    //Click event for order button
+
+
+//create a click event to add the order to the screen
+
+document.addEventListener(
+    "click",
+    (clickEvent) => {
+        const buttonClicked = clickEvent.target
+
+        if(buttonClicked.id === "button"){
+            addCustomOrder() //invoking the function responsible for taking temp state and making it permanant 
+    
+        }
+    }
+)

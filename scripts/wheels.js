@@ -22,7 +22,7 @@ export const wheels = () => {
 document.addEventListener(
     "change",
     (changeEvent) => {
-        if (changeEvent.target.name === "wheelChoice") {
+        if (changeEvent.target.id === "wheels-dropdown") {
           setWheels(parseInt(changeEvent.target.value))//store the user's choice in your database.
         }
     }

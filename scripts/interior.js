@@ -23,7 +23,7 @@ document.addEventListener(
     "change", //change event added because it is moving through options
     (changeEvent) => {
 
-        if (changeEvent.target.name === "interiorChoice") {
+        if (changeEvent.target.id === "interior-dropdown") {
            setInterior(parseInt(changeEvent.target.value))//store the user's choice in your database.
         }
     }
